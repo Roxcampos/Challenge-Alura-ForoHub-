@@ -11,7 +11,7 @@ public class TopicoServicio {
     @Autowired
     private UsuarioRepositorio usuarioRepositorio;
 
-    public TopicoResponseData crearTopico(TopicoDatos topicoDatos){
+    public TopicoMensajeData crearTopico(TopicoDatos topicoDatos){
 
 
         if (!usuarioRepositorio.findById(topicoDatos.idUser()).isPresent()){
@@ -36,6 +36,6 @@ public class TopicoServicio {
 
         topicoRepositorio.save(topico1);
 
-        return new TopicoResponseData(topico1);
+        return new TopicoMensajeData(topico1);
     }
 }
